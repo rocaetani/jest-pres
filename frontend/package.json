@@ -1,0 +1,50 @@
+{
+  "name": "sales-index",
+  "version": "1.0.0",
+  "description": "Micro-Frontend that provides a list of the vehicle sales of a dealer ",
+  "scripts": {
+    "lint": "eslint ./src/. --ext js --ext jsx",
+    "lint:fix": "npm run lint -- --fix",
+    "start": "webpack serve --config build-config/webpack.dev.js",
+    "build": "rm -fr ./out &&  webpack --config build-config/webpack.prod.js",
+    "provide-local": "rm -fr ../../local-provider/public && source ./environment-local/.env-provider && webpack --config build-config/webpack.provide-local.js",
+    "reload": "rm -fr ./node_modules && rm -f package-lock.json && npm i",
+    "test": "jest --runInBand",
+    "test:watch": "jest --watch --runInBand",
+    "getTranslations": "phrase pull"
+  },
+  "author": "Team Eagle",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "prop-types": "^15.8.1",
+    "react": "17.0.2",
+    "react-dom": "17.0.2"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.22.9",
+    "@babel/preset-react": "^7.22.5",
+    "@testing-library/jest-dom": "^5.16.4",
+    "@testing-library/react": "12.1.5",
+    "@testing-library/react-hooks": "^8.0.1",
+    "@testing-library/user-event": "^13.5.0",
+    "babel-loader": "^8.2.5",
+    "chance": "^1.1.11",
+    "copy-webpack-plugin": "^9.0.1",
+    "css-loader": "^6.7.1",
+    "eslint": "^8.44.0",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-react": "^7.32.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-testing-library": "^5.11.0",
+    "html-webpack-plugin": "^5.5.0",
+    "jest": "27.5.1",
+    "jest-watch-typeahead": "^2.2.2",
+    "jest-when": "^3.5.1",
+    "style-loader": "^3.3.1",
+    "webpack": "^5.73.0",
+    "webpack-cli": "^4.10.0",
+    "webpack-dev-server": "^4.9.3",
+    "webpack-merge": "^5.8.0"
+  }
+}
+

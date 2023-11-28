@@ -1,0 +1,87 @@
+{
+  "env": {
+    "browser": true,
+    "node": true,
+    "es6": true,
+    "jest": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:import/errors",
+    "plugin:import/warnings"
+  ],
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
+  "globals": {
+    "Atomics": "readonly",
+    "SharedArrayBuffer": "readonly",
+    "global": true
+  },
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 2020,
+    "sourceType": "module"
+  },
+  "plugins": ["import", "react", "react-hooks", "testing-library"],
+  "rules": {
+    "indent": ["error", 4, { "SwitchCase": 1 }],
+    "linebreak-style": ["error", "unix"],
+    "quotes": ["error", "double"],
+    "semi": ["error", "never"],
+    "no-multi-spaces": "error",
+    "max-len": ["error", { "code": 120 }],
+    "react/no-unescaped-entities": 0,
+    "react/display-name": [
+      0,
+      {
+        "ignoreTranspilerName": true
+      }
+    ],
+    "react/jsx-uses-react": 2,
+    "react/jsx-uses-vars": 2,
+    "react/jsx-no-undef": [
+      2,
+      {
+        "allowGlobals": true
+      }
+    ],
+    "object-curly-spacing": [2, "always"],
+    "react-hooks/rules-of-hooks": "error", // Checks rules of Hooks
+    "testing-library/await-async-query": "error",
+    "testing-library/no-await-sync-query": "error",
+    "testing-library/no-debugging-utils": "warn",
+    "testing-library/no-dom-import": "off",
+    "import/no-unresolved": "off",
+    "import/named": "warn",
+    "import/namespace": "warn",
+    "import/no-named-as-default": "off",
+    "import/export": "warn",
+    "import/order": [
+      "error",
+      {
+        "groups": ["builtin", "external", "parent", "sibling", "index"],
+        // "newlines-between": "always",
+        "alphabetize": {
+          "order": "asc",
+          "caseInsensitive": true
+        }
+      }
+    ]
+  },
+  "overrides": [
+    {
+      "files": ["src/**/*.test.js"],
+      "rules": {
+        "no-console": ["error"],
+        "no-restricted-globals": ["error"],
+        "react/prop-types": "off"
+      }
+    }
+  ]
+}
